@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import {AppContext} from '../../context/MainContext/mainContext'
-import { useEffect} from "react";
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 
 function Home() {
     let [data,setData]=useState(null)
+    let {item,setItem}=useContext(AppContext);
+
+    const navigate = useNavigate();
 
     const getData = async () => {
         let res = await axios.get(`https://images-api.nasa.gov/search?q=apollo&description=moon&media_type=image`);
@@ -29,9 +33,12 @@ function Home() {
                 </div>
                 <div className="picBoxWrapper">
                     <div className="picBox">
-                        {data?data.map((currentPic)=>{
+                        {data?data.map((currentPic, i)=>{
                             return(
-                            <div className="picCell">
+                            <div className="picCell" key={i} onClick={()=>{
+                                navigate('/view');
+                                setItem(currentPic)
+                                }}>
                                 <div className="picTitle">{currentPic.data[0].title}</div>
                                 <div className="picTop">
                                     <img src={currentPic.links[0].href} alt="" className="pic" />
