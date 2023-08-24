@@ -4,6 +4,7 @@ import { useEffect, useContext } from "react";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
+//BROUGHT YOU TO BY TEAM INFINITY ERIK, ANN, MATT
 
 function Home() {
     let [data,setData]=useState(null)

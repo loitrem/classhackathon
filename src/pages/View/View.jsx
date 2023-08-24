@@ -15,7 +15,7 @@ function View() {
                 <div className="viewCell">
                         <div className="viewTitle">{item.data[0].title}</div>
                         <div className="viewTop">
-                            <img src={item.links[0].href} alt="" className="view" />
+                            <img src={item.links[0].href} alt="" className="viewImg" />
                         </div>
                         <div className="viewBottom">
                             <div className="viewDesc">

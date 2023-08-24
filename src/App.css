@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(240, 240, 240);
+  background-image: url('./images/bg.jpeg');
 }
 
 .homeWrapper{
@@ -16,11 +17,10 @@
   border: 1px solid black;
 }
 
-.intro {
-    width: 100%;
+.intro,.links {
+  width: 100%;
   font-size: 26px;
   font-weight: bold;
-
   margin-bottom: 35px;
   border: 1px solid black;
   color: whitesmoke;
@@ -51,6 +51,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 20px;
 }
 
 .picCell:hover{
@@ -70,8 +71,9 @@
 
 .navWrapper {
   width: 100%;
-  border: 1px solid black;
-  background-color: antiquewhite;
+  border-bottom: 1px solid rgb(116, 116, 116);
+  color: whitesmoke;
+  background-color: rgb(52, 52, 52);
 }
 
 .nav {
@@ -89,18 +91,35 @@ margin-bottom: 25px;
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: rgb(0, 0, 136);
+  color: whitesmoke;
 }
 
 .link:hover {
-  color: rgb(69, 69, 180);
+  color: darkgoldenrod;
+}
+
+.viewWrapper {
+  width: 100%;
+}
+
+.view {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-color: rgb(209, 209, 209);
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .viewCell{
+  width: 90%;
   margin-bottom: 50px;
- background-color: rgb(144, 208, 211);
- border: 1px solid black;
- padding: 15px;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: rgb(144, 208, 211);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .viewTitle{
@@ -109,11 +128,23 @@ margin-bottom: 25px;
   margin-bottom: 15px;
 }
 
+.viewDesc {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .description {
+  width: 75%;
+  text-align: left;
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgb(219, 219, 219);
 }
 
 .pageMove{
@@ -130,4 +161,8 @@ margin-bottom: 25px;
 
 .nextPage {
   cursor: pointer;
+}
+
+.lastPage:hover,.nextPage:hover {
+  color: darkgoldenrod;
 }
