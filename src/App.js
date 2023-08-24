@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-
 import NavBar from './components/NavBar/NavBar'
 import Home from './pages/Home/Home'
 
@@ -10,7 +9,7 @@ function App() {
     <div className="App">
           <NavBar/>
           <Routes>
-            <Route path="/" element={<Home />}/>
+            <Route path="/" element={<Home/>}/>
           </Routes> 
     </div>
   );
