@@ -1,38 +1,133 @@
 .App {
   text-align: center;
+  background-color: rgb(240, 240, 240);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeWrapper{
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-color: rgb(209, 209, 209);
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro {
+    width: 100%;
+  font-size: 26px;
+  font-weight: bold;
+
+  margin-bottom: 35px;
+  border: 1px solid black;
+  color: whitesmoke;
+  background-color: rgb(52, 52, 52);
+}
+
+.introText{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.picBox{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.picCell{
+  width: 35%;
+  margin-bottom: 50px;
+  background-color: rgb(144, 208, 211);
+  border: 1px solid black;
+  padding: 15px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.picCell:hover{
+  background-color: rgb(94, 148, 151);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.picTitle{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.pic {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.navWrapper {
+  width: 100%;
+  border: 1px solid black;
+  background-color: antiquewhite;
+}
+
+.nav {
+margin-bottom: 25px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 136);
+}
+
+.link:hover {
+  color: rgb(69, 69, 180);
+}
+
+.viewCell{
+  margin-bottom: 50px;
+ background-color: rgb(144, 208, 211);
+ border: 1px solid black;
+ padding: 15px;
+}
+
+.viewTitle{
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pageMove{
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lastPage {
+  cursor: pointer;
+}
+
+.nextPage {
+  cursor: pointer;
 }

@@ -7,28 +7,71 @@ import axios from 'axios';
 
 function Home() {
     let [data,setData]=useState(null)
-    let {item,setItem}=useContext(AppContext);
+    let {item,setItem,page, setPage }=useContext(AppContext);
+    const queryParameters = new URLSearchParams(window.location.search)
+
+    let pageNum;
+
+if (queryParameters.get("page")){
+            pageNum = queryParameters.get("page")
+            console.log('HEY I AM HERE! ', queryParameters.get("page"));
+            } else if (!queryParameters.get("page")){
+                pageNum = 1
+            }
+
+    const handleOnClickMinus=()=>{
+
+            //back
+        if(pageNum>1){
+            pageNum--
+            navigate(`/?page=${pageNum}`)
+        }
+        else if (pageNum===1){
+            navigate(`/?page=1`)
+        }
+    }
+
+    const handleOnClickPlus=()=>{
+
+    //next
+    if(pageNum<10){
+        pageNum++
+        navigate(`/?page=${pageNum}`)
+    }
+}
+    
 
     const navigate = useNavigate();
 
     const getData = async () => {
-        let res = await axios.get(`https://images-api.nasa.gov/search?q=apollo&description=moon&media_type=image`);
+        let res = await axios.get(`https://images-api.nasa.gov/search?q=apollo&description=moon&media_type=image&page_size=20&page=${pageNum}`);
         setData(res.data.collection.items)
     }
 
     useEffect(()=>{
         getData()
-        },[])
+        },[pageNum])
 
         console.log('HERE = ',data?data[0]:'');
-        console.log(data?data[0].title:'');
+
     
     return (
         <div className="homeWrapper">
             <div className="home">
                 <div className="introWrapper">
                     <div className="intro">
-                        <div className="introText">Apollo Program</div>
+                    <div className="pageMove">
+                        <div className="lastPage" onClick={()=>{
+                            handleOnClickMinus()
+                        
+                        }}>PREV</div>
+                        <div className="pageOf">{pageNum}/10</div>
+                        <div className="nextPage" onClick={()=>{
+                            handleOnClickPlus()
+
+                            
+                        }}>NEXT</div>
+                    </div>
                     </div>
                 </div>
                 <div className="picBoxWrapper">
@@ -37,10 +80,11 @@ function Home() {
                             return(
                             <div className="picCell" key={i} onClick={()=>{
                                 navigate('/view');
-                                setItem(currentPic)
+                                setItem(currentPic);
+                                setPage(pageNum);
                                 }}>
                                 <div className="picTitle">{currentPic.data[0].title}</div>
-                                <div className="pic">
+                                <div className="picDiv">
                                     <img src={currentPic.links[0].href} alt="" className="pic" />
                                 </div>
                             </div>

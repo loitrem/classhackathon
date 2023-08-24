@@ -6,6 +6,7 @@ const AppContextProvider = (props) => {
 
     //sets the userState (creating state)
     const [item, setItem] = useState(null);
+    const [page,setPage] = useState(null);
 
 
     return (
@@ -13,7 +14,10 @@ const AppContextProvider = (props) => {
             <AppContext.Provider value={{
                 // add the use states to the provider
                 item,
-                setItem
+                setItem,
+
+                page,
+                setPage
 
             }}> 
         {props.children}

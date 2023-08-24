@@ -4,18 +4,21 @@ import {AppContext} from '../../context/MainContext/mainContext'
 
 function View() {
 
-    let {item,setItem}=useContext(AppContext);
+    let {item, page}=useContext(AppContext);
 
     return (
         <div className="viewWrapper">
             <div className="view">
-                <div className="picCell">
-                        <div className="picTitle">{item.data[0].title}</div>
-                        <div className="picTop">
-                            <img src={item.links[0].href} alt="" className="pic" />
+                <div className="links">
+                    <a href={`/?page=${page}`} className="link">Home</a>
+                </div>
+                <div className="viewCell">
+                        <div className="viewTitle">{item.data[0].title}</div>
+                        <div className="viewTop">
+                            <img src={item.links[0].href} alt="" className="view" />
                         </div>
-                        <div className="picBottom">
-                            <div className="picDesc">
+                        <div className="viewBottom">
+                            <div className="viewDesc">
                                 <div className="description">{item.data[0].description}</div>
 
                             </div>
