@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {AppContext} from '../../context/MainContext/mainContext'
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ function Home() {
             <div className="home">
                 <div className="introWrapper">
                     <div className="intro">
-                        <div className="introText">Mars Stuff</div>
+                        <div className="introText">Apollo Program</div>
                     </div>
                 </div>
                 <div className="picBoxWrapper">
@@ -40,14 +40,8 @@ function Home() {
                                 setItem(currentPic)
                                 }}>
                                 <div className="picTitle">{currentPic.data[0].title}</div>
-                                <div className="picTop">
+                                <div className="pic">
                                     <img src={currentPic.links[0].href} alt="" className="pic" />
-                                </div>
-                                <div className="picBottom">
-                                    <div className="picDesc">
-                                        <div className="description">{currentPic.data[0].description}</div>
-
-                                    </div>
                                 </div>
                             </div>
                         )}):''}
