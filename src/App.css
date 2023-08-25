@@ -2,10 +2,12 @@
   text-align: center;
   background-color: rgb(240, 240, 240);
   background-image: url('./images/bg.jpeg');
+  background-attachment: fixed;
 }
 
 .homeWrapper{
   width: 100%;
+  min-height: 99vh;
 }
 
 .home{
@@ -41,27 +43,64 @@
 }
 
 .picCell{
-  width: 35%;
-  margin-bottom: 50px;
-  background-color: rgb(144, 208, 211);
-  border: 1px solid black;
-  padding: 15px;
+  width: 95%;
+  border-bottom: 3px solid rgb(23, 15, 110);
+  background-color: whitesmoke;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  justify-content: left;
   align-items: center;
-  border-radius: 20px;
+  padding-bottom: 20px;
 }
 
 .picCell:hover{
-  background-color: rgb(94, 148, 151);
+  background-color: rgb(176, 180, 199);
+}
+
+.picInfo {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .picTitle{
-  font-size: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 38px;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+}
+
+.picBy {
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+}
+
+.picWhen {
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: left;
+}
+
+.picDiv {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  
 }
 
 .pic {
@@ -85,6 +124,12 @@ margin-bottom: 25px;
   font-weight: bold;
 }
 
+.title2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
 .link {
   text-decoration: none;
   font-size: 28px;
@@ -100,6 +145,7 @@ margin-bottom: 25px;
 
 .viewWrapper {
   width: 100%;
+  min-height: 99vh;
 }
 
 .view {
@@ -110,6 +156,7 @@ margin-bottom: 25px;
   background-color: rgb(209, 209, 209);
   border-left: 1px solid black;
   border-right: 1px solid black;
+  padding-bottom: 20px;
 }
 
 .viewCell{
@@ -117,21 +164,27 @@ margin-bottom: 25px;
   margin-bottom: 50px;
   border: 1px solid black;
   padding: 15px;
-  background-color: rgb(144, 208, 211);
+  background-color: whitesmoke;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .viewTitle{
-  font-size: 36px;
+  font-size: 46px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 55px;
+  margin-top: 30px;
+  margin-left: 40px;
+  text-align: left;
 }
 
 .viewDesc {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin-top: 30px;
+  margin-left: 40px;
 }
 
 .description {
@@ -141,10 +194,6 @@ margin-bottom: 25px;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 15px;
-  background-color: rgb(219, 219, 219);
 }
 
 .pageMove{
@@ -153,6 +202,18 @@ margin-bottom: 25px;
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  background-color: rgb(52, 52, 52);
+  color: whitesmoke;
+}
+
+.bottom {
+  width: 100%;
+  background-color: rgb(52, 52, 52);
+  border-top: 1px solid black;
 }
 
 .lastPage {

@@ -80,16 +80,37 @@ if (queryParameters.get("page")){
                         {data?data.map((currentPic, i)=>{
                             return(
                             <div className="picCell" key={i} onClick={()=>{
-                                navigate('/view');
+                                navigate(`/view/?id=${currentPic.data[0].nasa_id}`);
                                 setItem(currentPic);
                                 setPage(pageNum);
                                 }}>
-                                <div className="picTitle">{currentPic.data[0].title}</div>
+                                <div className="picInfo">
+                                    <div className="picTitle">{currentPic.data[0].title}</div>
+                                    <div className="picBy">Taken By: {currentPic.data[0].photographer?currentPic.data[0].photographer:'NASA'}</div>
+                                    <div className="picWhen">Taken On: {currentPic.data[0].date_created}</div>
+                                </div>
+                                
                                 <div className="picDiv">
                                     <img src={currentPic.links[0].href} alt="" className="pic" />
                                 </div>
                             </div>
                         )}):''}
+                        <div className="bottom">
+                            <div className="pageMove">
+                                <div className="lastPage" onClick={()=>{
+                                    handleOnClickMinus()
+                                    document.body.scrollIntoView();
+                                
+                                }}>PREV</div>
+                                <div className="pageOf">{pageNum}/10</div>
+                                <div className="nextPage" onClick={()=>{
+                                    handleOnClickPlus()
+                                    document.body.scrollIntoView();
+
+                                    
+                                }}>NEXT</div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
